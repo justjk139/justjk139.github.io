@@ -3,8 +3,3 @@ theme: jekyll-theme-cayman
 title: [Alzheimer's Disease Blood Analysis]
 description: ["Ryan Cummings, Justin Kang, Gregory Thein \nDSC 180B WI21" ]
 # description: ["DSC 180B WI21"]
-description: |+
-  This is a long string
-
-
-  with new lines
