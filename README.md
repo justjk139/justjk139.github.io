@@ -1,13 +1,13 @@
-## Abstract
+# Abstract
 
-## Introduction
+# Introduction
 
 ### Background
 ### Biomarkers
 ### miRNA in Relation to Alzheimer's Disease
 
 
-## Methods
+# Methods
 
 ### Pipeline
 ### Cutadapt
@@ -15,15 +15,15 @@
 ### FastQC
 ### For the Future
 
-## Results
+# Results
 
 ### Patient Analysis
 ### EDA
 ### Analysis
 
 
-## Discussion
+# Discussion
 
-## Appendix
+# Appendix
 
-## Reference
+# Reference
