@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+## Abstract
 
-You can use the [editor on GitHub](https://github.com/justjk139/justjk139.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## Introduction
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Background
 
-### Markdown
+### Biomarkers
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### miRNA in Relation to Alzheimer's Disease
 
-```markdown
-Syntax highlighted code block
+## Methods
 
-# Header 1
-## Header 2
-### Header 3
+### Pipeline
 
-- Bulleted
-- List
+### Cutadapt
 
-1. Numbered
-2. List
+### Kallisto
 
-**Bold** and _Italic_ and `Code` text
+### FastQC
 
-[Link](url) and ![Image](src)
-```
+### For the Future
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Results
 
-### Jekyll Themes
+### Patient Analysis
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/justjk139/justjk139.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### EDA
 
-### Support or Contact
+## Discussion
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Appendix
+
+## Reference
