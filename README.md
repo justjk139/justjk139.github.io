@@ -28,9 +28,23 @@ The role of miRNA is important in the project, not only because our data is comp
 # Methods
 
 ### Pipeline
-### Cutadapt
-### Kallisto
+
+The data utilized for this project is from SRA study SRP022043. This dataset includs 44 blood samples from Alzheimer’s Disease patients and 22 blood samples from control patients. We utilized the wget function to obtain the data and store it in our database. Afterwards, we ran fastqc to all of the files to ensure the quality of each file. We then ran cutadapt to remove the adapter sequences for the files, and then ran fastqc again to check the quality of each read sequence again. If the reads did not pass, we decided to remove them before running kallisto. Kallisto allowed us to generate the quantification of non-coding RNA of each sample. We then ran a python script to combine all of the individual tsv’s into a counts matrix that will be used for DESeq2. After running DESeq2, we plan to then generate graphs and figures while also trying to identify various biomarkers that may be significant between Alzheimer’s patients and control patients (markers that have a difference in quantification between the two groups). We hope to then research more regarding the functions of those biomarkers and how it relates to Alzheimer’s.
+
+CITE SOFTWARE
+
 ### FastQC
+
+Once we have access to the fastq.qz files, we were then able to run FastQC on our files to ensure that the quality of the data was in a matter that allowed us to analyze our date without the fear of the data's quality affecting the outcomes. Several analyses are performed during a FastQC implementation and we were able to determine the quality of each file by looking at the provided analysis such as sequence length distribution, which measures sequence fragment sizes, duplicate sequences, which counts for each sequence their degree of duplication, and contents found in adapters[12]. Similar to our replication project, we ran FastQC twice: once prior to cutadapt and again after cutadapt was performed on the data. The necessity to perform FastQC twice comes down to whether implementing cutadapt within our pipeline is necessary to ensure quality data. If its found that the quality of the data did not have any significant differences made after implmenting cutadapt, then it may not be necessary to include it as part of the final pipeline process.
+
+### Cutadapt
+
+Similar to the project implementation from last quarter, we used cutadapt as part of our project pipeline. During sequencing procedures, cutadapt allows one to remove adapter sequences found in RNA and DNA molecules[11]. This is an important tool within the pipeline as it allowed us to negate any unnecessary information from our data prior to additional analysis being performed on the data. How it does this is by removing adapter sequences attached to molecules as a result of the molecules length during sequencing processes[11]. Additional changes were made prior to our implementation of it as our data did not involve gene expression data. For the adapter sequence, we used the standard Illumina Sequence of "AGATCGGAAGAGC". 
+
+### Kallisto
+
+We utilized kallisto to generate our quantifications due to its speed with reliable accuracy. Kallisto utilizes a pseudo alignment system that is effective at getting accurate counts quickly. We obtained a reference file from the Ensembl reference transcriptomes. We used a homo sapiens non coding RNA file as the reference as miRNA is considered a ncRNA. For the kallisto settings, because our reads were single ended reads, we had to supply the length (in this case, 50 base pairs), and standard deviation (we used 10). We also decided to make the bootstrap length 8 and number of threads 8 (so that it runs faster). Kallisto generates a runinfo.json, abundance.tsv, and abundance.h5 file report. 
+
 ### For the Future
 
 # Results
