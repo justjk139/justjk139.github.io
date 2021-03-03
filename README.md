@@ -39,7 +39,6 @@ During sequencing procedures, cutadapt allows one to remove adapter sequences fo
 
 We utilized kallisto to generate our quantifications due to its speed with reliable accuracy. Kallisto utilizes a pseudo alignment system that is effective at getting accurate counts quickly. We obtained a reference file from the Ensembl reference transcriptomes. We used a homo sapiens non coding RNA file as the reference as miRNA is considered a ncRNA. For the kallisto settings, because our reads were single ended reads, we had to supply the length (in this case, 50 base pairs), and standard deviation (we used 10). We also decided to make the bootstrap length 8 and number of threads 8 (so that it runs faster). Kallisto generates a runinfo.json, abundance.tsv, and abundance.h5 file report. 
 
-### For the Future
 
 # Results
 
