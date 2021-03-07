@@ -13,17 +13,17 @@ AD is an age-related neurodegenerative disease that currently affects more than 
 
 ### Biomarkers
 
-A biomarker is defined as a characteristic that is objectively measured and evaluated as an indicator of normal biological processes, pathogenic processes, or pharmacologic responses to a therapeautic intervention[3]. They assist in understanding what happens inside a living body and assist doctors and researchers in diagnosing and monitoring diseases. For Alzheimer's Disease, measurements of the brain image scans, cerebrospinal fluid and blood are common biomarkers associated with the disease as well as other neurological diseases. Both the cerebrospinal fluid and blood biomarkers are involved with identifying the proteins, beta-amyloid 42 and tau, which revolve around the brain and its functions[4]. 
+A biomarker is defined as a characteristic that is objectively measured and evaluated as an indicator of normal biological processes, pathogenic processes, or pharmacologic responses to a therapeautic intervention[2]. They assist in understanding what happens inside a living body and assist doctors and researchers in diagnosing and monitoring diseases. For Alzheimer's Disease, measurements of the brain image scans, cerebrospinal fluid and blood are common biomarkers associated with the disease as well as other neurological diseases. Both the cerebrospinal fluid and blood biomarkers are involved with identifying the proteins, beta-amyloid 42 and tau, which revolve around the brain and its functions[3]. 
 
 ### miRNA in Relation to Alzheimer's Disease
 
-MicroRNAs (miRNAs) are non-coding RNA molecules that are involved in the regulation of gene expression[6]. How miRNA regulates gene expression is by binding to Messenger RNA (mRNA) and preventing mRNA from producing protiens. Although the complete understanding of miRNA is still to be discovered, it is believed they play a crucial role in being able to control metablloic and cellular pathways[6]. The role of miRNA is important in the project, not only because our data is comprised of blood samples that contain miRNA information, but the ability of miRNA to be considered its own biomarker as well. Specifically, circulating miRNAs are believed to be an additional measurement aside from protein levels, that could lead to increased effectiveness in diagnosing AD in patients[7]. 
+MicroRNAs (miRNAs) are non-coding RNA molecules that are involved in the regulation of gene expression[4]. How miRNA regulates gene expression is by binding to Messenger RNA (mRNA) and preventing mRNA from producing protiens. Although the complete understanding of miRNA is still to be discovered, it is believed they play a crucial role in being able to control metablloic and cellular pathways[4]. The role of miRNA is important in the project, not only because our data is comprised of blood samples that contain miRNA information, but the ability of miRNA to be considered its own biomarker as well. Specifically, circulating miRNAs are believed to be an additional measurement aside from protein levels, that could lead to increased effectiveness in diagnosing AD in patients[5]. 
 
 # Methods
 
 ![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/methods_flowchart.png?raw=true)
 
-The data utilized for this project is from SRA study SRP022043[8]. This dataset includes 44 blood samples from Alzheimer’s Disease patients and 22 blood samples from control patients. We utilized the wget function to obtain the data and store it in our database. Wget is a computer program that retrieves content from web servers[10]. Afterwards, we ran FastQC to all of the files to ensure the quality of each file[11]. We then ran cutadapt to remove the adapter sequences for the files, and then ran fastqc again to check the quality of each read sequence again[12]. If the reads did not pass, we decided to remove them before running kallisto. Kallisto allowed us to generate the quantification of non-coding RNA of each sample[13]. We then ran a pandas script to combine all of the individual tsv’s into a counts matrix that will be used for DESeq2, and a Wilcoxon Test[14]. After getting the significant values from DESeq2, we then generated graphs and figures while also trying to identify various biomarkers that may be significant between Alzheimer’s patients and control patients (markers that have a difference in quantification between the two groups). We then researched more regarding the functions of those biomarkers and how it relates to Alzheimer’s.
+The data utilized for this project is from SRA study SRP022043[6]. This dataset includes 44 blood samples from Alzheimer’s Disease patients and 22 blood samples from control patients. We utilized the wget function to obtain the data and store it in our database. Wget is a computer program that retrieves content from web servers[7]. Afterwards, we ran FastQC to all of the files to ensure the quality of each file[8]. We then ran cutadapt to remove the adapter sequences for the files, and then ran fastqc again to check the quality of each read sequence again[9]. If the reads did not pass, we decided to remove them before running kallisto. Kallisto allowed us to generate the quantification of non-coding RNA of each sample[10]. We then ran a pandas script to combine all of the individual tsv’s into a counts matrix that will be used for DESeq2, and a Wilcoxon Test[11,12]. After getting the significant values from DESeq2, we then generated graphs and figures while also trying to identify various biomarkers that may be significant between Alzheimer’s patients and control patients (markers that have a difference in quantification between the two groups). We then researched more regarding the functions of those biomarkers and how it relates to Alzheimer’s.
 
 # Results
 
@@ -54,7 +54,7 @@ Figure 5. The nine miRNA values that overlapped between our DESeq2 output, our W
 
 # Discussion
 
-Within our analysis, we were able to find 11 miRNA values that overlapped between the two tests we performed on our data. We went ahead and researched each miRNA value to obtain additional information about them and whether they had any direct association to AD. Out of the 11 entries, we were only able to determine miRNA 26B to have any direct association with AD based on its positive regulation of tau-protein kinase activity[18]. The remaining values were instead closely related to various forms of cancer such as carcinoma. Some common processes seen through each miRNA value include gene silencing and regulation processes that involved apoptosis. Even though a lot of the miRNAs may not be directly related to AD, we believe an indirect influence on gene expression could still exist. 
+Within our analysis, we were able to find 11 miRNA values that overlapped between the two tests we performed on our data. We went ahead and researched each miRNA value to obtain additional information about them and whether they had any direct association to AD. Out of the 11 entries, we were only able to determine miRNA 26B to have any direct association with AD based on its positive regulation of tau-protein kinase activity[13]. The remaining values were instead closely related to various forms of cancer such as carcinoma. Some common processes seen through each miRNA value include gene silencing and regulation processes that involved apoptosis. Even though a lot of the miRNAs may not be directly related to AD, we believe an indirect influence on gene expression could still exist. 
 
 Furthermore, we realized that the paper utilized a different differential expression method compared to what we wanted to use. We wanted to use DESeq2 as we have previously used it before, and also factors in the entire dataset that is given. The original paper used a Wilcoxon-Mann-Whitney test, a non parametric model that only looked at a specific miRNA. We felt that using DESeq2 is advantageous as it considers all the different miRNAs and does not just look at an individual miRNA. This takes into consideration all of the data, which provides a more accurate result.
 
@@ -68,52 +68,40 @@ Overall, we realize how complex AD is and the need for more research to be done 
 [1] NIH Alzheimer’s Facts URL:
 https://www.nia.nih.gov/health/alzheimers-disease-fact-sheet
 
-[2] NIH Alzheimer Brain Impact URL:
-https://www.nia.nih.gov/health/what-happens-brain-alzheimers-disease
-
-[3] NCBI Biomarkers Definition URL:
+[2] NCBI Biomarkers Definition URL:
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3078627/
 
-[4] Biomarker Types URL:
+[3] Biomarker Types URL:
 https://www.ncbi.nlm.nih.gov/books/NBK326791/
 
-[5] NIH Biomarkers Definition URL: 
-https://www.nia.nih.gov/health/biomarkers-dementia-detection-and-research 
-
-[6] MicroRNA Definition URL:
+[4] MicroRNA Definition URL:
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3048316/
 
-[7] miRNA and Alzheimer’s Disease URL: 
+[5] miRNA and Alzheimer’s Disease URL: 
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4053843/
 
-[8] Main Article/Project Inspiration URL: 
+[6] Main Article/Project Inspiration URL: 
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4053778/
 
-[10] WGET Function Description URL:
+[7] WGET Function Description URL:
 https://www.gnu.org/software/wget/
 
-[11] Andrews, S. Babraham Bioinformatics URL: 
+[8] Andrews, S. Babraham Bioinformatics URL: 
 https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 
-[12] Martin, Marcel Bioinformatics in Action (2011) URL: 
+[9] Martin, Marcel Bioinformatics in Action (2011) URL: 
 http://journal.embnet.org/index.php/embnetjournal/article/view/200/479
 
-[13] kallisto description URL:
+[10] kallisto description URL:
 https://pachterlab.github.io/kallisto/about
 
-[14] Pandas read_csv capabilities URL:
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html 
-
-[15] ensembl file type description URL:
-https://uswest.ensembl.org/index.html
-
-[16] DESeq2 Application description URL:
-https://bioconductor.org/packages/release/bioc/html/DESeq2.html 
-
-[17] Wilcoxon Test Description URL:
+[11] Wilcoxon Test Description URL:
 https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test 
 
-[18] miRNA-26B description URL:
+[12] DESeq2 Application description URL:
+https://bioconductor.org/packages/release/bioc/html/DESeq2.html 
+
+[13] miRNA-26B description URL:
 https://www.ncbi.nlm.nih.gov/gene/407017 
 
 
