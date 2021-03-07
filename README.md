@@ -28,23 +28,24 @@ The data utilized for this project is from SRA study SRP022043. This dataset inc
 # Results
 
 ![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_3.png?raw=true)
+
 Figure 1. DESeq2 Volcano plot of p_values
 
 ![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_4.png?raw=true)
+
 Figure 2. Wilcox Volcano Plot of p_values
 
 ![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_5.png?raw=true)
+
 Figure 3. DESeq Boxplot of most upregulated and downregulated miRNA
 
 ![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_6.png?raw=true)
+
 Figure 4. Wilcox Test Boxplot of most upregulated and downregulated miRNA
 
 ![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/ENST_conversions.png?raw=true)
+
 Figure 5. The nine miRNA values that overlapped between our DESeq2 output, our Wilcoxon output, and the original study. ENST, miRNA label and HSA value for each miRNA is present.
-
-### EDA
-### Analysis
-
 
 # Discussion
 
