@@ -21,6 +21,8 @@ MicroRNAs (miRNAs) are non-coding RNA molecules that are involved in the regulat
 
 # Methods
 
+![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/methods_flowchart.png?raw=true)
+
 The data utilized for this project is from SRA study SRP022043. This dataset includes 44 blood samples from Alzheimer’s Disease patients and 22 blood samples from control patients. We utilized the wget function to obtain the data and store it in our database. Afterwards, we ran FastQC to all of the files to ensure the quality of each file. We then ran cutadapt to remove the adapter sequences for the files, and then ran fastqc again to check the quality of each read sequence again. If the reads did not pass, we decided to remove them before running kallisto. Kallisto allowed us to generate the quantification of non-coding RNA of each sample. We then ran a python script to combine all of the individual tsv’s into a counts matrix that will be used for DESeq2, and a Wilcoxon Test. After getting the significant values from DESeq2, we then generated graphs and figures while also trying to identify various biomarkers that may be significant between Alzheimer’s patients and control patients (markers that have a difference in quantification between the two groups). We then researched more regarding the functions of those biomarkers and how it relates to Alzheimer’s.
 
 # Results
