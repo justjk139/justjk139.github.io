@@ -84,9 +84,6 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4053843/
 [8] Main Article/Project Inspiration URL: 
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4053778/
 
-[9] Introduction to NGS: 
-https://www.illumina.com/science/technology/next-generation-sequencing.html
-
 [10] WGET Function Description URL:
 https://www.gnu.org/software/wget/
 
@@ -111,41 +108,11 @@ https://bioconductor.org/packages/release/bioc/html/DESeq2.html
 [17] Wilcoxon Test Description URL:
 https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test 
 
-18] miRNA-26B description URL:
+[18] miRNA-26B description URL:
 https://www.ncbi.nlm.nih.gov/gene/407017 
 
-[19] mirRNA-142 Brain Trauma URL:
-https://pubmed.ncbi.nlm.nih.gov/32751105/
 
-[20] mirRNA-182 description URL:
-https://www.ncbi.nlm.nih.gov/gene/406958 
 
-[21] miRNA-21 description URL:
-https://en.wikipedia.org/wiki/MIRN21
-
-[22] mirRNA-451B description URL:
-https://www.ncbi.nlm.nih.gov/gene/100616273 
-
-[23] mirRNA-142 description URL:
-https://www.ncbi.nlm.nih.gov/gene/406934
-
-[24] miRNA LET7 Gene Group URL:
-https://www.genenames.org/data/genegroup/#!/group/1697 
-
-[25] mirRNA-let-7b description URL:
-https://www.ncbi.nlm.nih.gov/gene/406884 
-
-[26] mirRNA-let-7f-1 description URL:
-https://www.ncbi.nlm.nih.gov/gene/406888  
-
-[27] mirRNA-let-7a-3 description URL:
-https://www.ncbi.nlm.nih.gov/gene/406883 
-
-[28] mirRNA-766 description URL:
-https://www.ncbi.nlm.nih.gov/gene/768218 
-
-[29] mirRNA-1248 description URL:
-https://www.ncbi.nlm.nih.gov/gene/100302143
 
 
 
