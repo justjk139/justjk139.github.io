@@ -27,13 +27,55 @@ The data utilized for this project is from SRA study SRP022043. This dataset inc
 
 # Results
 
+![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_3.png?raw=true)
+Figure 1. DESeq2 Volcano plot of p_values
+
+![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_4.png?raw=true)
+Figure 2. Wilcox Volcano Plot of p_values
+
+![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_5.png?raw=true)
+Figure 3. DESeq Boxplot of most upregulated and downregulated miRNA
+
+![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_6.png?raw=true)
+Figure 4. Wilcox Test Boxplot of most upregulated and downregulated miRNA
+
+![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/ENST_conversions.png?raw=true)
+Figure 5. The nine miRNA values that overlapped between our DESeq2 output, our Wilcoxon output, and the original study. ENST, miRNA label and HSA value for each miRNA is present.
+
 ### EDA
 ### Analysis
 
 
 # Discussion
 
-# Appendix
+As seen on Figure 7, the control counts are nearly 4 times as large as the AD counts. This miRNA is known for gene silencing and a lack of that gene silencing could be a factor within AD. For figure 8, counts in AD are more than 10 times as much, leading us to conclude that it is possible that the lack of activation of mRNA upon binding of cap-binding complexes could be another factor. In Figure 9, there were no counts of miR6882 in Alzheimer Disease, while there are counts in the control. Nonexistent counts in this miRNA leads us to believe that patients are more likely to be diagnosed with AD. In Figure 10 we determined inconclusive findings when looking at the counts distribution for miRNA 26B!
+
+Within our analysis, we were able to find 11 miRNA values that overlapped between the two tests we performed on our data. We went ahead and researched each miRNA value to obtain additional information about them and whether they had any direct association to AD. Out of the 11 entries, we were only able to determine miRNA 26B to have any direct association with AD based on its positive regulation of tau-protein kinase activity[18]. The remaining values were instead closely related to various forms of cancer such as carcinoma. Some common processes seen through each miRNA value include gene silencing and regulation processes that involved apoptosis. miRNA 6882 was the only miRNA value that was not able to find sufficient information to draw any conclusions relating to the miRNA or to the other 11 values. Even though a lot of the miRNAs may not be directly related to AD, we believe an indirect influence on gene expression could still exist. For example, miRNA 142, one of the 11 values we further investigated, had functions that have been linked to severe brain injuries prediction in patients[19]. It could be possible to utilize this miRNA to detect changes within AD patient brains. Or, miRNA 182 is positively related to apoptosis. It could be that there could be an overexpression of this miRNA in AD patients[20]. 
+
+Our first overlapped miRNA value is miRNA 21 (hsa-mir-21, MIR21). It plays a crucial role in many biological functions and diseases such as cancer and cardiovascular disease. MIR21 also regulates various immunological and developmental processes[21].
+
+miRNA 451B or MIR451B is located on the chromosome 17q11.2. Similar to MIR21, MIR451B is commonly associated with human cancers but is also responsible as a gene silencer which refers to the downregulation of gene expression by miRNAs[22]. 
+
+miRNA 142 or MIR142, has a gene ontology that associates this particular miRNAs roles to gene silencing, negative regulation of inflammatory responses, positive regulation of neuroinflammatory responses, and even responses to tumor necrosis factors[23]. Variations of MIR142 have also been linked to predicting severe brain injury (SBI) in patients. 
+
+miRNA 26B or MIR26B, attributed to processes that include gene silencing by an miRNA, negative regulation of defense response to viruses, positive regulation of apoptotic signaling pathways (apoptotic refers to cell death), as well as positive regulation of tau-protein kinase activity[18]. Tau-protein kinase activity is a feature of AD progression for those affected by the disease
+
+miRNA 182 or MIR182, is similar to MIR26B in that it also has a positive regulation response to apoptotic processes. Additional roles include gene silencing, negative regulation of epithelial cell apoptotic processes and positive regulation of gene expression[20].  It has a chromosome location at 7q32.2 that is most commonly associated with the most common type of cancer, carcinoma.
+
+miRNA let-7a-3 (MIR let-7a-3), miRNA let-7b (MIR let-7B), and miRNA let-7f-1 (MIR let-7f-1) are part of the MIRLet7 family[24]. MIR let-7a-3 and MIR let-7b both share the chromosome location 22q13.31 while MIR let-7f-1 is located at 9q22.32. MIR let-7b has processes such as negative regulation of hydrogen peroxide-mediated programmed cell death, and positive regulation of angiogenesis[25]. MIR let-7f-1 is associated with negative regulation of apoptotic processes and the negative regulation of protein kinase protein B[26]. All three are associated with gene silencing properties.
+
+miRNA 766 (MIR766) has pathways such as gene silencing and cellular response to tumor necrosis factor[28]. Research indicates MIR766 is closely related to other cancer related miRNAs.
+
+miRNA 1248 (MIR1248) has pathways such as viral mRNA translation and the transportation of the SLBP independent mature mRNA[29]. It is believed that RNA processing is also a standard processes completed by MIR1248.
+
+miRNA 6882 (MIR6882) 
+
+Furthermore, we realized that the paper utilized a different differential expression method compared to what we wanted to use. We wanted to use DESeq2 as we have previously used it before, and also factors in the entire dataset that is given. The original paper used a Wilcoxon-Mann-Whitney test, a non parametric model that only looked at a specific miRNA. We felt that using DESeq2 is advantageous as it considers all the different miRNAs and does not just look at an individual miRNA. This takes into consideration all of the data, which provides a more accurate result.
+
+Part of the limitations concerning this project include the availability of sufficient data. While the research paper that influenced our project provided us publicly with the 70 patient sample data, it was mentioned that additional entry points were utilized. This prevented us from being able to properly compare our results during various stages of the project due this difference. For example, if we had used the additional data, we may have been able to reproduce the significant results by solely running DESeq2. How this affected our overall outcome can be seen when we were only able to collect 11 miRNA values that overlapped out of a sample of over 1000 miRNA values. There was also a mention of several cognition tests, including Alzheimer Disease Assessment Scale-cognitive subscale (ADAS-Cog), Clinical Dementia Rating (CDR), Wechsler Memory Scale, and Mini-Mental State Exam (MMSE). None of the results of any of these tests were publicly available for us, which could have inhibited our results and findings. We could not have utilized these mental tests to further our results or used them as additional factors within our analysis. 
+
+Overall, we realize how complex AD is and the need for more research to be done in order to find a cure or definitive detection of this disease. miRNAs and other biomarkers can be a place to start, but there are also so many other factors that can contribute to and need to be examined more. However, we hope that the research and findings that we have done could be a starting point for future research, especially if it involves utilizing blood based samples similar to our study. Considering the promising outlook for using blood based data in the fight against AD, we hope that there could be more studies done on miRNAs and its functions, leading to more possible relationships/correlations between that and AD. If we were to do further investigation, we would like to have more information on the cognitive tests previously mentioned and how they could supplement the data further. Obtaining a much larger data sample size would also be something we would want to do. But, we hope that our current findings could help contribute to existing research on AD pathways or may lead to the beginning of novel research on this disease.
+
 
 # Reference
 
