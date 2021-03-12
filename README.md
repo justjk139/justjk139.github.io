@@ -21,28 +21,32 @@ MicroRNAs (miRNAs) are non-coding RNA molecules that are involved in the regulat
 
 # Methods
 
-![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/methods_flowchart.png?raw=true)
-
 The data utilized for this project is from SRA study SRP022043[6]. This dataset includes 44 blood samples from Alzheimer’s Disease patients and 22 blood samples from control patients. We utilized the wget function to obtain the data and store it in our database. Wget is a computer program that retrieves content from web servers[7]. Afterwards, we ran FastQC to all of the files to ensure the quality of each file[8]. We then ran cutadapt to remove the adapter sequences for the files, and then ran fastqc again to check the quality of each read sequence again[9]. If the reads did not pass, we decided to remove them before running kallisto. Kallisto allowed us to generate the quantification of non-coding RNA of each sample[10]. We then ran a pandas script to combine all of the individual tsv’s into a counts matrix that will be used for DESeq2, and a Wilcoxon Test[11,12]. After getting the significant values from DESeq2, we then generated graphs and figures while also trying to identify various biomarkers that may be significant between Alzheimer’s patients and control patients (markers that have a difference in quantification between the two groups). We then researched more regarding the functions of those biomarkers and how it relates to Alzheimer’s.
 
+![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/methods_flowchart.png?raw=true)
+
 # Results
+
+
+Our DESeq2 Results showed that for all of our samples we had no significant miRNA’s, all had p_values > 0.05 [Figure 1]. However, we noticed that around 1870 of the miRNA had a p_value of exactly 1.0 so, we filtered for p_values that were less than 1 and found 56 miRNA’s. In the original study, they noted that there were 56 different miRNA that they got as significant; the exact same number as our DESeq2 p_values that did not equal exactly 1. Still, we considered our DESeq2 results as inconclusive. Continuing along our pipeline, we performed a Wilcoxon Test. Our Wilcoxon Test results showed that there were actually 63 significant values with a p_value < 0.05 [Figure 2]. Looking at significant values from Wilcoxon Test and the insignificant values from DESeq2, we noticed that there was an overlap between the two, meaning that our results from DESeq2 were “correct” just not fully the same as the original research paper. From our results, we narrowed it down to the 11 most significant values that were seen in our DESeq2 output, our Wilcoxon output, and the original study.
+
 
 ![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_3.png?raw=true)
 
 Figure 1. DESeq2 Volcano plot of p_values
-
-Our DESeq2 Results showed that for all of our samples we had no significant miRNA’s, all had p_values > 0.05 [Figure 1]. However, we noticed that around 1870 of the miRNA had a p_value of exactly 1.0 so, we filtered for p_values that were less than 1 and found 56 miRNA’s. In the original study, they noted that there were 56 different miRNA that they got as significant; the exact same number as our DESeq2 p_values that did not equal exactly 1. Still, we considered our DESeq2 results as inconclusive. Continuing along our pipeline, we performed a Wilcoxon Test. Our Wilcoxon Test results showed that there were actually 63 significant values with a p_value < 0.05 [Figure 2]. Looking at significant values from Wilcoxon Test and the insignificant values from DESeq2, we noticed that there was an overlap between the two, meaning that our results from DESeq2 were “correct” just not fully the same as the original research paper. From our results, we narrowed it down to the 11 most significant values that were seen in our DESeq2 output, our Wilcoxon output, and the original study.
 
 
 ![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_4.png?raw=true)
 
 Figure 2. Wilcox Volcano Plot of p_values
 
+
+We took our most upregulated and downregulated miRNA results from DESeq2 which were: hsa-miR-766 (ENST00000390223.3), and hsa-miR-1248 (ENST00000629190.1) respectively [Figure 3]. We took our most upregulated and downregulated miRNA values from the Wilcoxon Test which were: hsa-miR-6882 (ENST00000619233.1) and hsa-miR-26b (ENST00000362251.4), respectively [Figure 4].
+
+
 ![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_5.png?raw=true)
 
 Figure 3. DESeq Boxplot of most upregulated and downregulated miRNA
-
-We took our most upregulated and downregulated miRNA results from DESeq2 which were: hsa-miR-766 (ENST00000390223.3), and hsa-miR-1248 (ENST00000629190.1) respectively [Figure 3]. We took our most upregulated and downregulated miRNA values from the Wilcoxon Test which were: hsa-miR-6882 (ENST00000619233.1) and hsa-miR-26b (ENST00000362251.4), respectively [Figure 4].
 
 ![alt text](https://github.com/justjk139/alzheimers_gene_analysis/blob/main/references/figure_6.png?raw=true)
 
